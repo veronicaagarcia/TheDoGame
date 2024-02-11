@@ -1,0 +1,139 @@
+#root {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
+}
+
+.logo {
+	padding: -1rem;
+	will-change: filter;
+	transition: filter 300ms;
+}
+
+@keyframes logo {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 1;
+		transform: translateX(48px);
+	}
+
+	24% {
+		opacity: 1;
+	}
+
+	40% {
+		animation-timing-function: ease-in;
+		transform: translateX(26px);
+	}
+
+	65% {
+		animation-timing-function: ease-in;
+		transform: translateX(13px);
+	}
+
+	82% {
+		animation-timing-function: ease-in;
+		transform: translateX(6.5px);
+	}
+
+	93% {
+		animation-timing-function: ease-in;
+		transform: translateX(4px);
+	}
+
+	25%,
+	55%,
+	75%,
+	87%,
+	98% {
+		animation-timing-function: ease-out;
+		transform: translateX(0px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.logo {
+		animation: logo 2s ease 0s 1 normal forwards;
+	}
+}
+
+.loadership_DXJEV {
+	display: flex;
+	position: relative;
+	width: 30px;
+	height: 30px;
+}
+.loadership_DXJEV div {
+	position: absolute;
+	/* width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: #bd8266; */
+	top: 90px;
+	animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.loadership_DXJEV div:nth-child(1) {
+	left: 79px;
+	animation: loadership_DXJEV_scale_up 0.62s infinite;
+}
+.loadership_DXJEV div:nth-child(2) {
+	left: 79px;
+	animation: loadership_DXJEV_translate 0.62s infinite;
+}
+.loadership_DXJEV div:nth-child(3) {
+	left: 152px;
+	animation: loadership_DXJEV_translate 0.62s infinite;
+}
+.loadership_DXJEV div:nth-child(4) {
+	left: 225px;
+	animation: loadership_DXJEV_scale_down 0.62s infinite;
+}
+@keyframes loadership_DXJEV_scale_up {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes loadership_DXJEV_scale_down {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+@keyframes loadership_DXJEV_translate {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(73px, 0);
+	}
+}
+
+.gradient-background {
+	background: linear-gradient(300deg, #202020, #202020, #bd8266);
+	background-size: 180% 180%;
+	animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

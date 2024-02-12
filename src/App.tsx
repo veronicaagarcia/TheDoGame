@@ -1,31 +1,24 @@
-import { Container, Typography } from '@mui/material'
+import { Container } from '@mui/material'
 import { useQuestionsStore } from './store/questions'
 import { Start } from './components/Start'
 import { Game } from './components/Game'
 import { GameOver } from './components/GameOver'
-import './App.css'
 import { HeaderLang } from './components/common/HeaderLang'
+import './App.css'
 
 function App() {
-	const logoG = '../src/assets/logoG.png'
-	const { questions, lifes, currentQuestion } = useQuestionsStore(
-		(state) => state
-	)
+	const questions = useQuestionsStore((state) => state.questions)
+	const lifes = useQuestionsStore((state) => state.lifes)
+	const currentQuestion = useQuestionsStore((state) => state.currentQuestion)
 
 	return (
-		<Container maxWidth='md'>
+		<Container>
 			<HeaderLang />
 			{lifes === 0 ||
 			(questions.length !== 0 && questions.length === currentQuestion) ? (
 				<GameOver />
 			) : (
-				<>
-					<Typography variant='h2' component='h1' className='title'>
-						D O
-						<img width={120} height={120} src={logoG} className='logo' />A M E
-					</Typography>
-					{questions.length === 0 ? <Start /> : <Game />}
-				</>
+				<>{questions.length === 0 ? <Start /> : <Game />}</>
 			)}
 		</Container>
 	)

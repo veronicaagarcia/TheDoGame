@@ -1,16 +1,13 @@
 #root {
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 2rem;
 	text-align: center;
 }
-
 .logo {
 	padding: -1rem;
 	will-change: filter;
 	transition: filter 300ms;
 }
-
 @keyframes logo {
 	0% {
 		animation-timing-function: ease-in;
@@ -57,26 +54,21 @@
 		transform: translateX(0px);
 	}
 }
-
 @media (prefers-reduced-motion: no-preference) {
 	.logo {
 		animation: logo 2s ease 0s 1 normal forwards;
 	}
 }
-
 .loadership_DXJEV {
 	display: flex;
 	position: relative;
-	width: 30px;
-	height: 30px;
+	width: 100%;
+	height: 100%;
 }
 .loadership_DXJEV div {
 	position: absolute;
-	/* width: 30px;
-	height: 30px;
-	border-radius: 50%;
-	background: #bd8266; */
-	top: 90px;
+	top: 0;
+	left: 2rem;
 	animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .loadership_DXJEV div:nth-child(1) {
@@ -119,13 +111,11 @@
 		transform: translate(73px, 0);
 	}
 }
-
 .gradient-background {
 	background: linear-gradient(300deg, #202020, #202020, #bd8266);
 	background-size: 180% 180%;
 	animation: gradient-animation 18s ease infinite;
 }
-
 @keyframes gradient-animation {
 	0% {
 		background-position: 0% 50%;

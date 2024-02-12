@@ -1,11 +1,12 @@
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
-// import { type Question } from "../types"
 
 interface State {
     questions: string[]
     currentQuestion: number
     fetchQuestions: () => Promise<void>
+    fetchFacts: () => Promise<void>
+    randomInfo: string
     answer: string[]
     selectAnswer: (index: number, questionInfo:string) => void
     userSelectedAnswer: string
@@ -32,12 +33,13 @@ export const useQuestionsStore = create<State>()(persist((set, get)=>{
         score: 0,
         loader:false,
         userName:'',
+        randomInfo: '',
         fetchQuestions: async () => {
             set({loader: true})
             const res = await fetch('https://dog.ceo/api/breeds/image/random/6')
             const json = await res.json()
             const question = json.message
-            const questions = question.sort(()=> Math.random() - 0.6).slice(0, 6)
+            const questions = json.message.sort(()=> Math.random() - 0.6).slice(0, 6)
             set({questions})
             set({loader: false})
             let breedDogs : string[] = [];
@@ -47,6 +49,14 @@ export const useQuestionsStore = create<State>()(persist((set, get)=>{
                 breedDogs= [...breedDogs, breedDog].sort()
             }
             set({answer : breedDogs})
+        },
+        fetchFacts: async () => {
+            set({loader: true})
+            const res = await fetch('https://dogapi.dog/api/v2/facts')
+            const json = await res.json()
+            const randomdata = json.data[0].attributes.body
+            set({randomInfo: randomdata})
+            set({loader: false})
         },
         selectAnswer: (index, questionInfo) => {
             const { answer,lifes, score, bones } = get() 

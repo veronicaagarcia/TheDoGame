@@ -9,7 +9,7 @@ interface propScore {
 export function Score({ text, score }: propScore) {
 	return (
 		<>
-			<Typography variant='h4' component='h3' color='#93627b'>
+			<Typography component='h3' color='#93627b'>
 				<FormattedMessage id='Score' defaultMessage='Score:' />
 				{score}
 			</Typography>

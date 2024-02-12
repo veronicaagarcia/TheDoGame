@@ -1,14 +1,14 @@
-import { useQuestionsStore } from '../store/questions'
-import { Stack, IconButton } from '@mui/material'
+import { useQuestionsStore } from '../../store/questions'
+import { Stack, IconButton, Button } from '@mui/material'
 import { ArrowForwardIosSharp } from '@mui/icons-material'
-import { ButtonReset } from './common/ButtonReset'
+// import { ButtonReset } from './ButtonReset'
 import { FormattedMessage } from 'react-intl'
 
 export function Footer() {
 	const { currentQuestion, questions, goNextQuestion } = useQuestionsStore(
 		(state) => state
 	)
-
+	const reset = useQuestionsStore((state) => state.reset)
 	return (
 		<footer style={{ position: 'static', bottom: 0 }}>
 			<Stack
@@ -17,8 +17,10 @@ export function Footer() {
 				justifyContent='space-between'
 				color='#bd8266'
 			>
-				<ButtonReset text='Reset' />
-
+				{/* <ButtonReset text='Reset' /> */}
+				<Button onClick={() => reset()} variant='contained' color='inherit'>
+					<FormattedMessage id='Reset' defaultMessage='Reset' />
+				</Button>
 				<IconButton
 					size='small'
 					color='inherit'

@@ -7,28 +7,39 @@
 	background-color: #202020;
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 }
-
 body {
-	margin: 0;
+	margin: auto;
 	min-width: 320px;
 	min-height: 100vh;
+	width: 96vw;
 }
-
 .responsive {
 	display: flex !important;
 	justify-content: center !important;
+	height: auto;
 }
-
+.LivesScore {
+	display: flex !important;
+	justify-content: space-evenly !important;
+}
 @media only screen and (max-width: 768px) {
 	.responsive {
 		display: block !important;
+	}
+	.LivesScore {
+		display: block !important;
+	}
+	.cardGame {
+		width: 61vw !important;
 	}
 }
 @media only screen and (max-width: 484px) {
 	.title {
 		font-size: x-large !important;
 	}
+}
+a {
+	text-decoration: none;
+	color: inherit;
 }

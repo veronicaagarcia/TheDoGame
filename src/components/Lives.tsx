@@ -11,7 +11,7 @@ export function Lives() {
 			text-orientation='upright'
 			sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
 		>
-			<Typography variant='h6' component='legend' p={2}>
+			<Typography component='legend' p={2}>
 				<FormattedMessage id='Lives' defaultMessage='LIVES' />
 			</Typography>
 			<Rating

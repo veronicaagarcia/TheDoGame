@@ -54,10 +54,10 @@ export function Question({ info }: { info: string }) {
 			<Button onClick={() => handleModal()} variant='outlined' color='info'>
 				<FormattedMessage id='CuriousFacts' defaultMessage='Curious facts' />
 			</Button>
-			<Modal keepMounted open={openModal} onClose={handleModal}>
+			<Modal open={openModal} onClose={handleModal}>
 				<ModalInfo principal={randomInfo} />
 			</Modal>
-			<Modal keepMounted open={openModalGuau} onClose={handleModalGuau}>
+			<Modal open={openModalGuau} onClose={handleModalGuau}>
 				<ModalGuau principal={info} />
 			</Modal>
 		</Card>

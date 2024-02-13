@@ -95,7 +95,7 @@ export function Game() {
 
 	return (
 		<Container>
-			<Modal keepMounted open={openModalHelp} onClose={handleModalHelp}>
+			<Modal open={openModalHelp} onClose={handleModalHelp}>
 				<ModalHelp principal={help} />
 			</Modal>
 			<Container

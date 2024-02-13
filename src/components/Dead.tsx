@@ -2,9 +2,9 @@ import { Card, Typography } from '@mui/material'
 import { ButtonReset } from './common/ButtonReset'
 import { useQuestionsStore } from '../store/questions'
 import { FormattedMessage } from 'react-intl'
+import funnyDog from '../assets/img/deadDog.png'
 
 export function Dead() {
-	const funnyDog = './src/assets/deadDog.png'
 	const userName = useQuestionsStore((state) => state.userName)
 
 	return (

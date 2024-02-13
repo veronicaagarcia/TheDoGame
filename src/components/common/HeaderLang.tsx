@@ -1,10 +1,10 @@
 import { Button, Container, Typography } from '@mui/material'
 import { useContext } from 'react'
 import { LangContext } from '../../context/LangContext.jsx'
+import logoG from '../../assets/img/logoG.png'
 
 export function HeaderLang() {
 	const lang = useContext(LangContext)
-	const logoG = '../src/assets/logoG.png'
 
 	return (
 		<Container>

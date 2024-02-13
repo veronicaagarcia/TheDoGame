@@ -9,7 +9,7 @@ export const ModalHelp = ({ principal: help }: modalProps) => {
 			<Typography component='h2'>
 				<FormattedMessage
 					id='HelpText'
-					defaultMessage={`Pay attention, obsly is not a${help}`}
+					defaultMessage={`Pay attention, obsly is not a `}
 				/>
 				{help}
 			</Typography>

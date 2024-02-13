@@ -68,7 +68,7 @@ export function Game() {
 				<Typography component='h2'>
 					<FormattedMessage
 						id='BadDog'
-						defaultMessage={`Bad dog!. The correct answerd is ${correctAnswer.toUpperCase()}`}
+						defaultMessage={`Bad dog!. The correct answerd is `}
 					/>
 					{correctAnswer.toUpperCase()}
 				</Typography>

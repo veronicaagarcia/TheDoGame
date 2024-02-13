@@ -43,10 +43,13 @@ export const ModalInfo = ({ principal: randomInfo }: modalProps) => {
 								<FormattedMessage id='Copy' defaultMessage={`Copy`} />
 							</Button>
 							<ArrowCircleRightOutlined color='info' />
-							<Button variant='contained' color='info'>
-								<a href='https://translate.google.com/?hl=es' target='_blank'>
-									<FormattedMessage id='Go' defaultMessage={`Go`} />
-								</a>
+							<Button
+								variant='contained'
+								color='info'
+								href='https://translate.google.com/?hl=es'
+								target='_blank'
+							>
+								<FormattedMessage id='Go' defaultMessage={`Go`} />
 							</Button>
 						</div>
 					</Typography>

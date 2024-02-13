@@ -104,7 +104,7 @@ export function Game() {
 				style={{ height: 'auto' }}
 			>
 				<Question info={questionInfo} />
-				<Toaster richColors position='bottom-center' />
+				<Toaster richColors position='top-center' />
 				<Card variant='elevation' className='cardGame' sx={styleCardsGame}>
 					<List disablePadding>
 						{answer.map((ans, index) => (

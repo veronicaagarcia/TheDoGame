@@ -54,6 +54,7 @@ export const useQuestionsStore = create<State>()(persist((set, get)=>{
             set({loader: true})
             const res = await fetch('https://dogapi.dog/api/v2/facts')
             const json = await res.json()
+            console.log(json,'json')
             const randomdata = json.data[0].attributes.body
             set({randomInfo: randomdata})
             set({loader: false})

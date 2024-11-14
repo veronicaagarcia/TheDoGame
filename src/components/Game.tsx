@@ -14,7 +14,7 @@ import JSConfetti from 'js-confetti'
 import { useQuestionsStore } from '../store/questions'
 import { Footer } from './common/Footer'
 import { Lives } from './Lives'
-import { Bones } from './PetFootScore'
+import { PetFootScore } from './PetFootScore'
 import { FormattedMessage } from 'react-intl'
 import { useState } from 'react'
 import { ModalHelp } from './common/ModalHelp'
@@ -65,19 +65,19 @@ export function Game() {
 			return 'transparent'
 		if (answer[index] !== correctAnswer) {
 			toast.error(
-				<Typography component='h2'>
+				<Typography component='h2' sx={{textAlign:'center'}}>
 					<FormattedMessage
 						id='BadDog'
 						defaultMessage={`Bad dog!. The correct answerd is `}
 					/>
-					{correctAnswer.toUpperCase()}
+					{correctAnswer.toLowerCase()}
 				</Typography>
 			)
 			return 'tomato'
 		}
 		if (answer[index] === correctAnswer) {
 			toast.success(
-				<Typography component='h2'>
+				<Typography component='h2' sx={{textAlign:'center'}}>
 					<FormattedMessage
 						id='GoodDog'
 						defaultMessage={`Very good, this is my dog!! Take a bone`}
@@ -94,7 +94,7 @@ export function Game() {
 	}
 
 	return (
-		<Container>
+		<Container sx={{paddingBottom: '20px'}}>
 			<Modal open={openModalHelp} onClose={handleModalHelp}>
 				<ModalHelp principal={help} />
 			</Modal>
@@ -105,10 +105,10 @@ export function Game() {
 			>
 				<Question info={questionInfo} />
 				<Toaster richColors position='top-center' />
-				<Card variant='elevation' className='cardGame' sx={styleCardsGame}>
+				<Card variant='elevation' sx={styleCardsGame}>
 					<List disablePadding>
 						{answer.map((ans, index) => (
-							<ListItem key={index} disablePadding>
+							<ListItem className='item.game' key={index} disablePadding>
 								<ListItemButton
 									disabled={userSelectedAnswer !== ''}
 									sx={{ backgroundColor: backgroundColor(index) }}
@@ -116,8 +116,8 @@ export function Game() {
 								>
 									<ListItemText
 										id='answerBreed'
-										primary={ans.toUpperCase()}
-										sx={{ textAlign: 'center', color: '#a16048' }}
+										primary={ans.toLowerCase()}
+										sx={{ textAlign: 'center', color: '#ffffff' }}
 									/>
 								</ListItemButton>
 							</ListItem>
@@ -140,7 +140,7 @@ export function Game() {
 			</Container>
 			<div className='LivesScore'>
 				<Lives />
-				<Bones />
+				<PetFootScore />
 			</div>
 			<Footer />
 		</Container>

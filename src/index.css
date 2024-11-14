@@ -3,26 +3,41 @@
 	line-height: 1.5;
 	font-weight: 400;
 	color-scheme: light dark;
-	color: #bd8266;
-	background-color: #202020;
+	color: #202020;
+	background-color: #bd8266; 
+	animation: cambioColor 5s infinite;
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
+	width: screen;
+	height: auto;
+}
+@keyframes cambioColor {
+	0% { background-color: #bd8266; } 
+	50% { background-color: #d57f6d; } 
+	100% { background-color: #bd8266; }
 }
 body {
 	margin: auto;
 	min-width: 320px;
 	min-height: 100vh;
-	width: 96vw;
+	width: screen;
 }
 .responsive {
 	display: flex !important;
 	justify-content: center !important;
 	height: auto;
+	padding-top: 100px;
+	align-items: center !important;
+	width: 80vw;
 }
 .LivesScore {
 	display: flex !important;
 	justify-content: space-evenly !important;
 }
+.title {
+	font-size: xx-large;
+}
+
 @media only screen and (max-width: 768px) {
 	.responsive {
 		display: block !important;
@@ -30,12 +45,9 @@ body {
 	.LivesScore {
 		display: block !important;
 	}
-	.cardGame {
-		width: 61vw !important;
-	}
 }
 @media only screen and (max-width: 484px) {
 	.title {
-		font-size: x-large !important;
+		font-size: large !important;
 	}
 }

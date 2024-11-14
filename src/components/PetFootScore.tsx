@@ -3,13 +3,13 @@ import { Box, Rating, Typography } from '@mui/material'
 import { useQuestionsStore } from '../store/questions'
 import { FormattedMessage } from 'react-intl'
 
-export function Bones() {
+export function PetFootScore() {
 	const bones = useQuestionsStore((state) => state.bones)
 	return (
 		<Box
-			writing-mode='vertical-rl'
-			text-orientation='upright'
-			sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+    writing-mode='vertical-rl'
+    text-orientation='upright'
+    sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
 		>
 			<Typography component='legend' p={2}>
 				<FormattedMessage id='Bones' defaultMessage='SCORE' />

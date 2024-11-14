@@ -13,12 +13,10 @@ export const ModalGuau = ({ principal: info }: modalProps) => {
 				transform: 'translate(-50%, -50%)',
 				border: 'none',
 				boxShadow: 1,
-				borderRadius: 20,
-				width: '100%',
-				height: 'auto',
-				maxWidth: '400px',
-				padding: 0,
-				margin: 0,
+				borderRadius: 2,
+				maxHeight: '90%',
+				maxWidth: '90%',
+				objectFit: 'contain',
 			}}
 		/>
 	)

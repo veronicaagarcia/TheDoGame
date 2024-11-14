@@ -1,45 +1,41 @@
-import { Button, Container, Typography } from '@mui/material'
-import { useContext } from 'react'
-import { LangContext } from '../../context/LangContext.jsx'
+import { Button, Typography, Box } from '@mui/material'
+import { useLang } from '../../context/LangContext'
 import logoG from '../../assets/img/logoG.png'
+import '../../App.css'
 
 export function HeaderLang() {
-	const lang = useContext(LangContext)
+  const { setLang } = useLang()
 
-	return (
-		<Container>
-			<div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-				<Button
-					onClick={() => lang?.setLang('es-AR')}
-					variant='outlined'
-					color='inherit'
-					sx={{
-						m: 1,
-						':hover': {
-							backgroundColor: 'whitesmoke',
-						},
-					}}
-				>
-					ES
-				</Button>
-				<Button
-					onClick={() => lang?.setLang('en-US')}
-					variant='outlined'
-					color='inherit'
-					sx={{
-						m: 1,
-						':hover': {
-							backgroundColor: 'whitesmoke',
-						},
-					}}
-				>
-					EN
-				</Button>
-			</div>
-			<Typography component='h1' className='title'>
-				D O
-				<img width={100} height={90} src={logoG} className='logo' />A M E
-			</Typography>
-		</Container>
-	)
+  const handleLangChange = (newLang: 'es-AR' | 'en-US') => {
+    setLang(newLang)
+  }
+
+  return (
+    <main className="contenedor-header">
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+        <Box>
+          <Button
+            onClick={() => handleLangChange('es-AR')}
+            variant="outlined"
+            color="secondary"
+            sx={{ mr: 2 }}
+          >
+            ES
+          </Button>
+          <Button
+            onClick={() => handleLangChange('en-US')}
+            variant="outlined"
+            color="secondary"
+          >
+            EN
+          </Button>
+        </Box>
+        <Typography variant="h4" component="h1" className="title" sx={{ display: 'flex', alignItems: 'center' }}>
+          D O
+          <img width={50} height={50} src={logoG} className="logo" alt="Game logo" />
+          A M E
+        </Typography>
+      </Box>
+    </main>
+  )
 }

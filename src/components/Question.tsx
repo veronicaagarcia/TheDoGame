@@ -24,7 +24,7 @@ export function Question({ info }: { info: string }) {
 
 	return (
 		<Card className='cardGame' variant='elevation' sx={styleCardsGame}>
-			<Typography component='h4' color='#93627b'>
+			<Typography component='h4' color='#ffffff'>
 				<FormattedMessage id='ChooseBreed' defaultMessage='CHOOSE THE BREED' />
 			</Typography>
 			<br />

@@ -1,13 +1,44 @@
-#root {
-	max-width: 1200px;
-	margin: 0 auto;
-	text-align: center;
+.contenedor-app{
+	min-width: screen !important;
+	min-height: screen !important;
+	height: 100vh;
+	scroll-behavior: smooth;
+	position: relative;
+	margin: auto;
+}
+.contenedor-header{
+	background-color:#202020;
+	color:#bd8266; 
+	width:screen;
+	padding-left: 6%;
+	padding-right: 6%;
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+.contenedor-footer{
+	background-color:#202020;
+	color:#bd8266; 
+	min-width: screen !important;
+	width:100%;
+	position: fixed;
+	bottom:0;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+}
+.footer-margin{
+	margin-bottom: 100px;
 }
 .logo {
-	padding: -1rem;
+	margin-top: -20px;
 	will-change: filter;
 	transition: filter 300ms;
 }
+.logof{
+	margin-top: -2px;
+	text-align: center;
+}
+
 @keyframes logo {
 	0% {
 		animation-timing-function: ease-in;
@@ -57,22 +88,5 @@
 @media (prefers-reduced-motion: no-preference) {
 	.logo {
 		animation: logo 2s ease 0s 1 normal forwards;
-	}
-}
-
-.gradient-background {
-	background: linear-gradient(300deg, #202020, #202020, #bd8266);
-	background-size: 180% 180%;
-	animation: gradient-animation 18s ease infinite;
-}
-@keyframes gradient-animation {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
 	}
 }

@@ -1,27 +1,28 @@
-import { Container } from '@mui/material'
 import { useQuestionsStore } from './store/questions'
 import { Start } from './components/Start'
 import { Game } from './components/Game'
 import { GameOver } from './components/GameOver'
 import { HeaderLang } from './components/common/HeaderLang'
 import './App.css'
+import { RealFooter } from './components/common/RealFooter'
 
-function App() {
-	const questions = useQuestionsStore((state) => state.questions)
-	const lifes = useQuestionsStore((state) => state.lifes)
-	const currentQuestion = useQuestionsStore((state) => state.currentQuestion)
+export default function App() {
+  const { questions, lifes, currentQuestion } = useQuestionsStore()
 
-	return (
-		<Container>
-			<HeaderLang />
-			{lifes === 0 ||
-			(questions.length !== 0 && questions.length === currentQuestion) ? (
-				<GameOver />
-			) : (
-				<>{questions.length === 0 ? <Start /> : <Game />}</>
-			)}
-		</Container>
-	)
+  const juegoTerminado = lifes === 0 || (questions.length !== 0 && questions.length === currentQuestion)
+  const juegoIniciado = questions.length > 0
+
+  return (
+    <main className="contenedor-app">
+      <HeaderLang />
+      {juegoTerminado ? (
+        <GameOver />
+      ) : juegoIniciado ? (
+        <Game />
+      ) : (
+        <Start />
+      )}
+      <RealFooter />
+    </main>
+  )
 }
-
-export default App

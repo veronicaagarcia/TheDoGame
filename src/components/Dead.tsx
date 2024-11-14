@@ -9,15 +9,14 @@ export function Dead() {
 
 	return (
 		<>
-			<Typography component='h3' color='#93627b'>
+			<Typography component='h3' color='secondary'>
 				<FormattedMessage id='Dead' defaultMessage='You are dead' />
 			</Typography>
 			<br />
 			<img width={120} height={120} src={funnyDog} alt='Buu' />
 			<Card
-				className='gradient-background'
-				variant='outlined'
-				sx={{ color: '#f6dfbf', textAlign: 'center', m: 5, p: 5 }}
+				variant="outlined"
+        sx={{ backgroundColor: '#202020', color: '#bd8266', textAlign: 'center', m: 2, p: 3, width:'60%' }}
 			>
 				<Typography component='h4'>
 					{userName !== '' ? (

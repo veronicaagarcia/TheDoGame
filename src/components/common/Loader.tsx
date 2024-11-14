@@ -1,5 +1,14 @@
-import { CircularProgress } from '@mui/material'
+import { CircularProgress, Box } from '@mui/material'
 
 export function Loader() {
-	return <CircularProgress color='inherit' />
+  return (
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      minHeight="200px"
+    >
+      <CircularProgress color="primary" />
+    </Box>
+  )
 }

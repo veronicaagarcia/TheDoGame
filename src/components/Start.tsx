@@ -1,39 +1,35 @@
-import { Button, Input } from '@mui/material'
+import { Button, TextField, Typography, Box } from '@mui/material'
 import { useQuestionsStore } from '../store/questions'
 import { FormattedMessage } from 'react-intl'
-import { Label } from '@mui/icons-material'
+import { useState } from 'react'
 
 export function Start() {
-	const fetchQuestions = useQuestionsStore((state) => state.fetchQuestions)
-	const getUserName = useQuestionsStore((state) => state.getUserName)
+  const [userName, setUserName] = useState('')
+  const { fetchQuestions, getUserName } = useQuestionsStore()
 
-	const handleGetUser = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const name = e.target.value
-		getUserName(name)
-	}
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    getUserName(userName)
+    fetchQuestions()
+  }
 
-	const handleClick = () => {
-		fetchQuestions()
-	}
-
-	return (
-		<>
-			<hr style={{ marginTop: '8px' }} />
-			<FormattedMessage
-				id='Nickname'
-				defaultMessage='Nickname if you were a pet'
-			/>
-			<br />
-			<Label />
-			<Input
-				sx={{ color: 'ivory', marginBottom: 4 }}
-				onChange={handleGetUser}
-				autoFocus
-			/>
-			<br />
-			<Button onClick={handleClick} variant='contained' color='inherit'>
-				<FormattedMessage id='Start' defaultMessage='Start' />
-			</Button>
-		</>
-	)
+  return (
+    <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2, alignItems: 'center', marginTop:'200px' }}>
+      <Typography variant="h6" sx={{color:'#ffffff'}}>
+        <FormattedMessage id="Nickname" defaultMessage="Nickname if you were a pet" />
+      </Typography>
+      <TextField
+        value={userName}
+        onChange={(e) => setUserName(e.target.value)}
+        variant="outlined"
+        color="secondary"
+        inputProps={{ 'aria-label': 'Nickname' }}
+        sx={{width:'60%'}}
+        autoFocus
+      />
+      <Button type="submit" variant="contained" color="secondary">
+        <FormattedMessage id="Start" defaultMessage="Start" />
+      </Button>
+    </Box>
+  )
 }

@@ -1,25 +1,40 @@
-import { Card, Typography } from '@mui/material'
+import { Card, Typography, Box } from '@mui/material'
 import { FormattedMessage } from 'react-intl'
 
-interface propScore {
-	text: string
-	score: number
+interface ScoreProps {
+  text: string
+  score: number
 }
 
-export function Score({ text, score }: propScore) {
-	return (
-		<>
-			<Typography component='h3' color='#93627b'>
-				<FormattedMessage id='Score' defaultMessage='Score:' />
-				{score}
-			</Typography>
-			<Card
-				className='gradient-background'
-				variant='outlined'
-				sx={{ color: '#f6dfbf', textAlign: 'center', m: 5, p: 5 }}
-			>
-				<Typography component='h4'>{text}</Typography>
-			</Card>
-		</>
-	)
+export function Score({ text, score }: ScoreProps) {
+  return (
+    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', my: 3 }}>
+      <Typography variant="h5" color="primary" gutterBottom>
+        <FormattedMessage 
+          id="Score" 
+          defaultMessage="Score: {score}"
+          values={{ score }}
+        />
+      </Typography>
+      <Card
+        variant="outlined"
+        sx={{ 
+          color: '#f6dfbf', 
+          textAlign: 'center', 
+          p: 3,
+          width: '100%',
+          maxWidth: 400,
+          borderRadius: 2,
+          boxShadow: 3
+        }}
+      >
+        <Typography variant="body1">
+          <FormattedMessage
+            id="ScoreMessage"
+            defaultMessage={text}
+          />
+        </Typography>
+      </Card>
+    </Box>
+  )
 }

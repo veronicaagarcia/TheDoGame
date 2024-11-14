@@ -3,21 +3,20 @@ export const styleModelText = {
 	top: '50%',
 	left: '50%',
 	transform: 'translate(-50%, -50%)',
-	width: '50vw',
-	bgcolor: 'white',
-	color: '#bd8266',
-	border: 'none',
+	width: 'fit',
+	bgcolor: '#ffffff',
+	color: '#202020',
 	boxShadow: 24,
 	p: 6,
-	borderRadius: '5px',
 }
 
 export const styleCardsGame = {
-	bgcolor: '#f6dfbf',
-	p: 2,
+	bgcolor: '#bd8266',
+	animation: 'cambioColor 5s infinite',
 	textAlign: 'center',
-	fontSize: 14,
-	width: '47vw',
 	height: 'auto',
-	margin: 'inherit',
+	padding: '16px',
+	width: '90%',
 }
+const keyframes = ` @keyframes cambioColor { 0% { background-color: #bd8266; } 50% { background-color: #d57f6d; } 100% { background-color: #bd8266; } } `
+const styleSheet = document.styleSheets[0]; styleSheet.insertRule(keyframes, styleSheet.cssRules.length)

@@ -15,7 +15,7 @@ export function Footer() {
         direction="row"
         alignItems="center"
         justifyContent="space-between"
-        sx={{ color: '#bd8266', mt: 2, pb: 2 }}
+        sx={{ color: '#bd8266', mt: 6, pb: 2, paddingLeft:'5%', paddingRight: '5%' }}
       >
         <Button onClick={reset} variant="contained" color="secondary">
           <FormattedMessage id="Reset" defaultMessage="Reset" />

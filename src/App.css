@@ -6,14 +6,25 @@
 	position: relative;
 	margin: auto;
 }
+.border-app{
+	width: full;
+	height: full;
+	min-height:70vh;
+	margin: auto;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
 .contenedor-header{
 	background-color:#202020;
 	color:#bd8266; 
 	width:screen;
 	padding-left: 6%;
 	padding-right: 6%;
-	padding-top: 3%;
+	padding-top: 5%;
 	padding-bottom: 3%;
+	border-bottom-left-radius: 30%;
+	border-bottom-right-radius: 30%;
 }
 .contenedor-footer{
 	background-color:#202020;
@@ -25,6 +36,8 @@
 	margin: auto;
 	display: flex;
 	justify-content: center;
+	border-top-left-radius: 30%;
+	border-top-right-radius: 30%;
 }
 .footer-margin{
 	margin-bottom: 100px;

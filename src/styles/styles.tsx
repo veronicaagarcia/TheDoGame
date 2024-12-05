@@ -11,12 +11,16 @@ export const styleModelText = {
 }
 
 export const styleCardsGame = {
-	bgcolor: '#bd8266',
-	animation: 'cambioColor 5s infinite',
+	bgcolor: '#202020',
 	textAlign: 'center',
 	height: 'auto',
+	minHeight: '35vh',
 	padding: '16px',
 	width: '90%',
+	borderRadius: '30%',
+	display:'flex',
+	flexDirection: 'column',
+	justifyContent: 'center',
+	alignItems: 'center',
+	margin: 'auto'
 }
-const keyframes = ` @keyframes cambioColor { 0% { background-color: #bd8266; } 50% { background-color: #d57f6d; } 100% { background-color: #bd8266; } } `
-const styleSheet = document.styleSheets[0]; styleSheet.insertRule(keyframes, styleSheet.cssRules.length)

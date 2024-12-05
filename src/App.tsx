@@ -3,8 +3,8 @@ import { Start } from './components/Start'
 import { Game } from './components/Game'
 import { GameOver } from './components/GameOver'
 import { HeaderLang } from './components/common/HeaderLang'
-import './App.css'
 import { RealFooter } from './components/common/RealFooter'
+import './App.css'
 
 export default function App() {
   const { questions, lifes, currentQuestion } = useQuestionsStore()
@@ -15,6 +15,7 @@ export default function App() {
   return (
     <main className="contenedor-app">
       <HeaderLang />
+      <div className='border-app'>
       {juegoTerminado ? (
         <GameOver />
       ) : juegoIniciado ? (
@@ -22,6 +23,7 @@ export default function App() {
       ) : (
         <Start />
       )}
+      </div>
       <RealFooter />
     </main>
   )

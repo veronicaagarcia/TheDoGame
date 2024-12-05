@@ -14,7 +14,7 @@ export function Start() {
   }
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2, alignItems: 'center', marginTop:'200px' }}>
+    <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 4, alignItems: 'center', justifyContent: "center", height:"full", minHeight:"700px" }}>
       <Typography variant="h6" sx={{color:'#ffffff'}}>
         <FormattedMessage id="Nickname" defaultMessage="Nickname if you were a pet" />
       </Typography>

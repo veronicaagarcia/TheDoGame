@@ -9,7 +9,7 @@ export function PetFootScore() {
 		<Box
     writing-mode='vertical-rl'
     text-orientation='upright'
-    sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+    sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#202020' }}
 		>
 			<Typography component='legend' p={2}>
 				<FormattedMessage id='Bones' defaultMessage='SCORE' />

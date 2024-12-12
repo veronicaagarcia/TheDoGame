@@ -94,7 +94,7 @@ export function Game() {
 	}
 
 	return (
-		<div style={{ height:'full', minHeight:'70vh', flexDirection: 'column',
+		<div style={{ height:'full', flexDirection: 'column',
 			justifyContent: 'center', alignItems: 'center', margin:'auto', overflow:'scroll', scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
 			<Modal open={openModalHelp} onClose={handleModalHelp}>
 				<ModalHelp principal={help} />
@@ -102,7 +102,7 @@ export function Game() {
 			<Container
 				maxWidth='md'
 				className='responsive'
-				style={{ height: '100%', minHeight:'60vh' }}
+				style={{ height: '100%', }}
 			>
 				<Question info={questionInfo} />
 				<Toaster richColors position='top-center' />

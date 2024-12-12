@@ -9,7 +9,6 @@
 .border-app{
 	width: full;
 	height: full;
-	min-height:70vh;
 	margin: auto;
 	flex-direction: column;
 	justify-content: center;
@@ -21,7 +20,7 @@
 	width:screen;
 	padding-left: 6%;
 	padding-right: 6%;
-	padding-top: 5%;
+	padding-top: 3%;
 	padding-bottom: 3%;
 	border-bottom-left-radius: 30%;
 	border-bottom-right-radius: 30%;
